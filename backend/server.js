@@ -1,10 +1,9 @@
 const express = require("express");
-
-const db = require("./backend/config/config");
+const db =require("./config/config");
 require("dotenv").config();
 
 // Import routes
-const routes = require("./backend/routes");
+const routes = require("./routes");
 
 // Create Express app
 const app = express();
