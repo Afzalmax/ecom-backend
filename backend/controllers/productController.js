@@ -1,7 +1,7 @@
 const Product = require('../models/Product');
 const config = require('../config/db');
 
-exports.registerProduct = async (req, res) => {
+exports.addProduct = async (req, res) => {
     try {
         const { name, description, price, category, image, stockQuantity  } = req.body;
         const product = new Product({ name, description, price, category, image, stockQuantity  });

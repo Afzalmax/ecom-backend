@@ -53,5 +53,6 @@ const productSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
+productSchema.path('reviews').required(false);
 module.exports = mongoose.model('Product', productSchema);
 

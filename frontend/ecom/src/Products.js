@@ -23,7 +23,7 @@ const ProductList = () => {
       <h2>All Products</h2>
       <ul>
         {products.map(product => (
-          <li key={product._id}>
+          <li key={product_id}>
             <p>{product.name}</p>
             <p>Price: ${product.price}</p>
             {/* You can add more details like description, images, etc. */}
