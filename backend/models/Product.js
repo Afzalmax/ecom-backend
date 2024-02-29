@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: Number,
+        type: String,
         required: true
     },
     category: {
@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     stockQuantity: {
-        type: Number,
+        type: String,
         required: true
     },
     reviews: [{
