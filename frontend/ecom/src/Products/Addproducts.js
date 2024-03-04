@@ -6,8 +6,9 @@ const Addproducts = () => {
     name: "",
     description: "",
     price: "",
+    size:"",
     category: "",
-    imageurl: "",
+    image: "",
     stockQuantity: "",
   });
 const handleChange = (e) => {
@@ -28,7 +29,7 @@ const handleChange = (e) => {
   };
   return(
     <>
-    <form  method="POST">
+    <form onSubmit={handleSubmit} method="POST">
        <label>Name:</label>
        <input type="text"
             name="name" 
@@ -47,6 +48,12 @@ const handleChange = (e) => {
             id="price" 
             value={formData.price}
             onChange={handleChange}/>
+       <label>Size:</label>
+       <input type="text"
+            name="size" 
+            id="size" 
+            value={formData.size}
+            onChange={handleChange}/>
        <label>Category:</label>
        <input type="text"
             name="category" 
@@ -55,9 +62,9 @@ const handleChange = (e) => {
             onChange={handleChange}/>
        <label>Image URL:</label>
        <input type="text"
-            name="imageurl" 
-            id="imageurl" 
-            value={formData.imageurl}
+            name="image" 
+            id="image" 
+            value={formData.image}
             onChange={handleChange}/>  
             <br></br>
        <label>StockQuantity:</label>
@@ -66,7 +73,7 @@ const handleChange = (e) => {
             id="stockQuantity" 
             value={formData.stockQuantity}
             onChange={handleChange}/>
-        <button onSubmit={handleSubmit}>ADD PRODUCT</button>
+        <button >ADD PRODUCT</button>
     </form>
     </>
         

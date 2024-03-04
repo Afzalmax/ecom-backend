@@ -23,7 +23,14 @@ exports.addToCart = async (req, res) => {
          }
  
          // Check if the product exists and is in stock (You need to implement this logic)
- 
+         const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({ error: "Product not found" });
+        }
+        if (product.stock < quantity) {
+            return res.status(400).json({ error: "Product is out of stock" });
+        }
          // Check if the product is already in the cart
          const existingItemIndex = cart.items.findIndex(item => item.product.toString() === productId);
  
@@ -36,7 +43,12 @@ exports.addToCart = async (req, res) => {
          }
  
          // Recalculate the cart total (You need to implement this logic)
- 
+         let total = 0;
+         for (const item of cart.items) {
+             const product = await Product.findById(item.product);
+             total += product.price * item.quantity;
+         }
+         cart.total = total;
          // Save the updated cart
          await cart.save();
  

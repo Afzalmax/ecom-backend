@@ -3,8 +3,8 @@ const config = require('../config/db');
 
 exports.addProduct = async (req, res) => {
     try {
-        const { name, description, price, category, image, stockQuantity  } = req.body;
-        const product = new Product({ name, description, price, category, image, stockQuantity  });
+        const { name, description, price, size, category, image, stockQuantity  } = req.body;
+        const product = new Product({ name, description, price, size, category, image, stockQuantity  });
         await product.save();
         res.status(201).json({ message: 'Product registered successfully' });
     } catch (error) {
